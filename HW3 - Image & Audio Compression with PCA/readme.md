@@ -11,7 +11,7 @@
 4. The details of compression rate is shown in [compress_rate_result folder](https://github.com/HongHanh2104/maths4ai/tree/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/compress_rate_result), with [image.csv](https://github.com/HongHanh2104/maths4ai/blob/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/compress_rate_result/image.csv) for image file and [audio.csv](https://github.com/HongHanh2104/maths4ai/blob/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/compress_rate_result/audio.csv) for audio file.
 5. The process of compressing all these images and audios are shown in [PCA for data compression.ipynb](https://github.com/HongHanh2104/maths4ai/blob/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/HW3%20-%20PCA%20for%20data%20compression%20.ipynb). In this file, all the directory would be default, if you want to test with other files, please change the directory.
 
-### **Analysize**
+### **Analysis**
 **Image Compression**
 
 As the diagram shown in [PCA for data compression.ipynb](https://github.com/HongHanh2104/maths4ai/blob/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/HW3%20-%20PCA%20for%20data%20compression%20.ipynb), when k is lower than 40, the compression rate is acceptable. In my opinion, k = 11 with the compression rate of 0.284 is the limit for image sensing.
