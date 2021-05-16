@@ -23,9 +23,9 @@ def compress(X, k):
     
     # Step 6: Compute compressed matrix
     Z = X_hat @ U_k 
-    return U_k, x_mean, Z
+    return Z, U_k, x_mean
 
-def decode(U_k, x_mean, Z):
+def decode(Z, U_k, x_mean):
     # Reconstruct
     Xapprox = (Z @ U_k.T) + x_mean
     return Xapprox.real
