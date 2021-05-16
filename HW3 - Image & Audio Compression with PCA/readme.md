@@ -5,6 +5,9 @@
 |Nguyễn Lê Hồng Hạnh|honghanh.nguyen2104@gmail.com|
 
 ### **How to run file**
+
+**Note: You can see my code and results in this file zip, or also on [my github](https://github.com/HongHanh2104/maths4ai)**
+
 1. PCA algorithm can be found in [pca.py](https://github.com/HongHanh2104/maths4ai/blob/master/HW3/pca.py).
 2. Input image and audio can be found in [data folder](https://github.com/HongHanh2104/maths4ai/tree/master/HW3/data), with image filename is _4.jpg_, and audio filename is _godzilla_roar.wav_.
 3. Compressed images and audios are shown in [images folder](https://github.com/HongHanh2104/maths4ai/tree/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/images) and [audios folder](https://github.com/HongHanh2104/maths4ai/tree/master/HW3%20-%20Image%20%26%20Audio%20Compression%20with%20PCA/audios), respectively. In each folder, files are the results of compressing each above descripted image and audio  corresponding to k = 1, 6, 11, ... 
