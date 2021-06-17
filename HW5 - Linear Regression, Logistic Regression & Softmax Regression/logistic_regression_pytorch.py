@@ -1,15 +1,14 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-#from torch.autograd import Variable
 
-class LinearRegression(nn.Module):
+class LogisticRegression(nn.Module):
     def __init__(self, w_num):
-        super(LinearRegression, self).__init__()
-        self.linear = nn.Linear(w_num, 1, bias=True)
+        super(LogisticRegression, self).__init__()
+        self.logistic = nn.Linear(w_num, 1, bias=True)
     
     def forward(self, x):
-        return self.linear(x)
+        return F.sigmoid(self.logistic(x))
 
 def train(train_iter, model, criterion, optimizer, epochs):
     for epoch in range(epochs):

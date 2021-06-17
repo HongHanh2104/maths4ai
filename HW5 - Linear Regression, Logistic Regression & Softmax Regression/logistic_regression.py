@@ -32,6 +32,12 @@ def logistic_regression(X, y, lr, epochs=100):
             break
     return W, b, loss_list
 
+def compute_score(W, b, X, y):
+    X = normalize(X)
+    predict = (sigmoid(X @ W + b) > 0.5)
+    correct = predict == y
+    return (np.sum(correct) / len(X)) * 100
+
 def lor_visualize_loss(loss_list):
     sns.lineplot(x=range(len(loss_list)), y=loss_list)
     plt.show()
@@ -44,7 +50,9 @@ def test():
     ])
     y = np.array([1, 0, 1])
     W, b, loss_history = logistic_regression(X, y, lr=0.01)
-    print(len(loss_history))
+    
+    acc = computer_score(W, b, X, y)
+    print(acc)
 
 
 if __name__ == '__main__':
