@@ -1,24 +1,27 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 #from torch.autograd import Variable
 
 class LinearRegression(nn.Module):
-    def __init__(self):
+    def __init__(self, w_num):
         super(LinearRegression, self).__init__()
-        self.linear = nn.Linear(1, 1)
+        self.linear = nn.Linear(w_num, 1, bias=True)
     
     def forward(self, x):
         return self.linear(x)
 
-def train(data, model, criterion, optimizer, epochs):
-    X, y = data
+def train(train_iter, model, criterion, optimizer, epochs):
     for epoch in range(epochs):
-        optimizer.zero_grad()
-        out = model(X)
-        loss = criterion(out, y)
-        loss.backward()
-        optimizer.step()
-        print(f'Epoch {epoch}, loss {loss.item()}')
+        total_loss = []
+        for X, y in train_iter:
+            out = model(X)
+            loss = criterion(out, y)
+            total_loss.append(loss.item())
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+        print(f'Epoch {epoch + 1}, loss {sum(total_loss) / len(total_loss)}')
     print('Complete training')
     return model
 
