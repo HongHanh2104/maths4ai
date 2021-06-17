@@ -21,7 +21,7 @@ def logistic_regression(X, y, lr, epochs=100):
     X = normalize(X)
     while True:
         h = sigmoid(X @ W + b)
-        loss = - (np.sum(y * np.log(h) + (1 - y) * np.log(1 - h))) / m
+        loss = -(np.sum(y * np.log(h) + (1 - y) * np.log(1 - h))) / m
         loss_list.append(loss)
         dW = (X.T @ (h - y)) / m
         db = np.sum(h - y) / m
@@ -34,7 +34,8 @@ def logistic_regression(X, y, lr, epochs=100):
 
 def compute_score(W, b, X, y):
     X = normalize(X)
-    predict = (sigmoid(X @ W + b) > 0.5)
+    predict = np.argmax(sigmoid(X @ W + b), axis=1)
+    #predict = (sigmoid(X @ W + b) > 0.5)
     correct = predict == y
     return (np.sum(correct) / len(X)) * 100
 
