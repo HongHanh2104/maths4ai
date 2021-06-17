@@ -27,7 +27,7 @@ def linear_regression(X, y, lr, epochs=1500):
         epoch += 1
     return X @ W + b, loss_list
 
-def visualize_loss(loss_list):
+def lr_visualize_loss(loss_list):
     sns.lineplot(x=range(len(loss_list)), y=loss_list)
     plt.show()
 
