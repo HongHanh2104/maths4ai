@@ -14,14 +14,14 @@ def softmax(x):
 
 def convert_one_hot(y, c):
     n = len(y)
-    y_hot = np.zeros(n, c)
+    y_hot = np.zeros((n, c))
     y_hot[np.arange(n), y] = 1
     return y_hot
 
 def softmax_regression(X, y, c, lr, epochs=100):
     # c: classes
     m, n = X.shape
-    W = np.random.randn((n, c))
+    W = np.random.random((n, c))
     b = 0.0
     epoch = 0  
     loss_list = []
